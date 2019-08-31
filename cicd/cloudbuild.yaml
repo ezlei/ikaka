@@ -17,6 +17,10 @@ steps:
   name: 'gcr.io/$PROJECT_ID/kustomize'
   dir: 'cicd/kustomize/base'
   args: ['edit', 'set', 'image', 'lei-app=gcr.io/${PROJECT_ID}/lei-app:${SHORT_SHA}']
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=lei-ikala-cluster-1'
+    - 'GCLOUD_PROJECT=${PROJECT_ID}'
 
 # This step deploys the new version of our container image
 # in the hello-cloudbuild Kubernetes Engine cluster.

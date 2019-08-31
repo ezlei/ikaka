@@ -1,3 +1,8 @@
+# The PROJECT_ID and SHORT_SHA variables are automatically
+# replaced by Cloud Build.
+substitutions:
+  _APP_IMAGE: 'gcr.io/${PROJECT_ID}/lei-app:${SHORT_SHA}'
+
 steps:
 # This step builds the container image.
 - id: Build
@@ -25,8 +30,3 @@ steps:
     - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=lei-ikala-cluster-1'
     - 'GCLOUD_PROJECT=${PROJECT_ID}'
-
-# The PROJECT_ID and SHORT_SHA variables are automatically
-# replaced by Cloud Build.
-substitutions:
-  _APP_IMAGE: 'gcr.io/$PROJECT_ID/lei-app:${SHORT_SHA}'

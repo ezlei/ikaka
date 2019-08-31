@@ -1,0 +1,9 @@
+namePrefix: dev-
+commonLabels:
+  variant: dev
+commonAnnotations:
+  note: it's for Development
+bases:
+- ../../base
+patches:
+- replica_count.yaml

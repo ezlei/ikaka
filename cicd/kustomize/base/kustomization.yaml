@@ -1,0 +1,5 @@
+commonLabels:
+  app: lei-app
+resources:
+- deployment.yaml
+- service.yaml

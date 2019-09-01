@@ -46,9 +46,9 @@ steps:
     - '-f'
     - 'values-dev.yaml'
     - '--set'
-    - 'image.repository="gcr.io/${PROJECT_ID}/lei-app"'
+    - 'image.repository=gcr.io/${PROJECT_ID}/lei-app'
     - '--set'
-    - 'image.tag="${SHORT_SHA}"'
+    - 'image.tag=${SHORT_SHA}'
   env:
     - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
     - 'CLOUDSDK_CONTAINER_CLUSTER=lei-ikala-cluster-1'

@@ -34,7 +34,7 @@ steps:
     - 'GCLOUD_PROJECT=${PROJECT_ID}'
 
 - id: Deploy by Helm
-  - name: 'gcr.io/${PROJECT_ID}/helm'
+  name: 'gcr.io/${PROJECT_ID}/helm'
   dir: 'cicd/helm'
   args:
     - 'install'

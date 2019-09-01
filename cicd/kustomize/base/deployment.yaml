@@ -15,7 +15,17 @@ spec:
         app: lei-app
     spec:
       containers:
-      - name: lei-app
-        image: lei-app
-        ports:
-        - containerPort: 5000
+        - name: lei-app
+          image: lei-app
+          ports:
+            - name: http
+              containerPort: 5000
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
